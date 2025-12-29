@@ -1,0 +1,12 @@
+extend type Query{
+  categoryListQuery: [Category]
+  categoryDetailQuery(id: ID!): Category
+
+}
+
+type Category{ 
+  id: Int
+  name: String
+  created_at: String
+  updated_at: String
+}

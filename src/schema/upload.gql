@@ -1,0 +1,21 @@
+extend type Mutation {
+  singleUpload(file: Upload!): UploadedFile!
+  uploadDocument(file: Upload!): UploadedDocument
+}
+
+type UploadedFile {
+  filename: String
+  url: String
+  fileSize: String
+  mimetype: String
+  width: String
+  height: String
+}
+
+type UploadedDocument {
+  name: String
+  type: String
+  size: Int
+  ext: String
+  url: String
+}

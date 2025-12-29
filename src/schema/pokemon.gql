@@ -1,0 +1,43 @@
+type Query {
+  pokemonListQuery(
+    categoryId: Int
+    page: Int
+    limit: Int
+    search: String
+  ): [Pokemon!]!
+  pokemonDetailQuery(id: Int!): Pokemon!
+}
+
+type Mutation {
+  createPokemon(input: CreatePokemonInput!): Pokemon!
+  updatePokemon(id: Int!, input: UpdatePokemonInput!): Pokemon!
+  deletePokemon(id: Int!): Boolean!
+}
+
+type Pokemon {
+  id: Int!                # IMPORTANT: Use Int, not ID if DB uses integer
+  category_id: Int!
+  category_name: String!  
+  pokemon_name: String!
+  pokemon_description: String!
+  pokemon_image: String!
+}
+
+input CreatePokemonInput {
+  category_name: String!
+  pokemon_name: String!
+  pokemon_description: String!
+  pokemon_image: String!
+}
+
+input UpdatePokemonInput {
+  category_name: String
+  pokemon_name: String
+  pokemon_description: String
+  pokemon_image: String
+}
+
+# Omitting the ! in the definition of fields 
+# within an UpdatePokemonInput type is a deliberate 
+# design choice that enhances the usability of the GraphQL
+# API for update operations. 

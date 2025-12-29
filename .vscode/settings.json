@@ -1,0 +1,20 @@
+{
+    "editor.tabSize": 2,
+    "workbench.colorCustomizations": {},
+    "javascript.preferences.quoteStyle": "single",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "typescript.tsdk": "node_modules\\typescript\\lib"
+}

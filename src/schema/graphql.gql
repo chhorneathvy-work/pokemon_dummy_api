@@ -1,0 +1,17 @@
+scalar JSON
+scalar JSONObject
+scalar Upload
+
+type Query {
+  testList: [String]
+  testDetail(id: Int!): String
+}
+
+type Mutation {
+  createTest(input: TestInput): Int!
+  updateTest(id: Int!, input: TestInput): Boolean
+}
+
+input TestInput {
+  message: String
+}
