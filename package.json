@@ -9,7 +9,6 @@
     "dev": "ts-node src/server.ts",
     "start": "node dist/server.js",
     "generate": "graphql-codegen --config codegen.yml",
-    "postinstall": "npm run build",
     "graph": "ts-node framework/generate_graph_type.ts",
     "table": "ts-node framework/generate_table_cli.ts",
     "scaffold": "ts-node framework/generate_scaffold.ts",
