@@ -5,15 +5,21 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
+    "rootDir": ".",
+    "outDir": "dist",
     // "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "baseUrl": "."
   },
-  "include": ["src"],
+  "include": ["src", "kenexfile.ts"],
   "typeAcquisition": {
     "include": ["jest"]
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "src/test",
+    "src/resolvers/upload",
+  ]
 }

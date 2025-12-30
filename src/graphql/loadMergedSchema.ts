@@ -1,17 +1,16 @@
 import { gql } from "graphql-tag";
 import * as fs from "fs";
+import * as path from "path";
 
 export default function loadMergeSchema() {
-  const schema = [];
-  const files = fs.readdirSync("./src/schema").sort();
+  const schemaPath =
+    process.env.NODE_ENV === "production"
+      ? path.join(__dirname, "../schema")   // dist/schema
+      : path.join(process.cwd(), "src/schema");
 
-  for (const file of files) {
-    schema.push(
-      gql`
-        ${fs.readFileSync(__dirname + "/../schema/" + file)}
-      `
-    );
-  }
+  const files = fs.readdirSync(schemaPath).sort();
 
-  return [...schema];
+  return files.map(file =>
+    gql`${fs.readFileSync(path.join(schemaPath, file), "utf8")}`
+  );
 }
