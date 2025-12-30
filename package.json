@@ -16,9 +16,6 @@
     "migrate": "knex migrate:latest --knexfile knexfile.ts",
     "migrate:rollback": "knex migrate:rollback --knexfile knexfile.ts"
   },
-  "engines": {
-  "node": ">=20"
-  },
   "dependencies": {
     "@apollo/server": "^4.5.0",
     "@apollo/server-plugin-landing-page-graphql-playground": "^4.0.0",
