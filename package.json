@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/server.ts",
-    "start": "node dist/server.js",
+    "start": "node dist/src/server.js",
     "generate": "graphql-codegen --config codegen.yml",
     "graph": "ts-node framework/generate_graph_type.ts",
     "table": "ts-node framework/generate_table_cli.ts",
