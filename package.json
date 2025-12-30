@@ -7,13 +7,14 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/server.ts",
-    "start": "node dist/src/server.js",
+    "start": "node dist/server.js",
     "generate": "graphql-codegen --config codegen.yml",
+    "postinstall": "npm run build",
     "graph": "ts-node framework/generate_graph_type.ts",
     "table": "ts-node framework/generate_table_cli.ts",
     "scaffold": "ts-node framework/generate_scaffold.ts",
     "test": "jest src/test",
-    "migrate": "knex migrate:latest --knexfile knexfile.ts",
+    "migrate": "knex migrate:latest --knexfile dist/knexfile.js --env production",
     "migrate:rollback": "knex migrate:rollback --knexfile knexfile.ts"
   },
   "dependencies": {
